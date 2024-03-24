@@ -1,0 +1,9 @@
+.data
+    struct_size equ 4   ; Taille d'une structure en octets (2 * sizeof(int))
+    table_size equ 50   ; Nombre d'éléments dans le tableau
+    struct_struc struc  ; Déclaration de la structure
+        type dw ?
+        couleur dw ?
+    struc_end struc
+
+    tableau struc table_size dup ({0, 0})  ; Déclaration du tableau de 50 éléments initialisé à 0
