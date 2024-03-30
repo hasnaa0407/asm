@@ -74,8 +74,6 @@ main proc
     mov dl,bh
     add dl, 30h ; convertir le nombre en caractere ASCII
     int 21h
-
- 
      
     mov bx,0
     mov bl,n
@@ -104,15 +102,6 @@ main proc
     add dl, 30h ; convertir le nombre en caractere ASCII
     int 21h
               
-              
-              
-              
-
-            
-    
-    
-
-    
     mov ax,0
     mov ah, 09h  ;affichage du message4.
     lea dx, message4
@@ -330,13 +319,13 @@ numero proc
     mov al,[bp+2] 
     div deux
     cmp ah,1
-    jne outt3
+    jne blanche
     
     mov ax,0
     mov al,[bp+4]
     div deux
     cmp ah,0
-    jne outt3
+    jne blanche
     
     mov ax,0 
     mov al,[bp+4] 
@@ -348,14 +337,20 @@ numero proc
     push ax
     
     outt3: 
+    mov ax,99
+    push ax
+    jmp fin3     
+         
+    blanche:
     mov ax,0
     push ax
+    
     fin3: 
+    
     mov bp,dx
     push dx
     ret
 numero endp
 
-              
-              
+                
 end main
