@@ -34,9 +34,6 @@ verifcasedepart proc
      cmp tour,-1
      jne tour_1
      
-    ;int n=numerocase(i,j)-1 ;
-    ;if( damier[n]==2 || damier[n]==4 ){ // la tu utilise la fonction couleur== blanc
-    call numero ;i et j deja lue dans le main
     		
     mov al,[si+n]
     cmp al,2
