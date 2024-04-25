@@ -157,7 +157,7 @@ main proc
     
     mov ax,0
     mov ah, 09h  
-    lea dx,nexistepas 
+    lea dx,casedepartnexistepas 
     int 21h
     jmp suitee
     
@@ -169,7 +169,7 @@ main proc
     
     mov ax,0
     mov ah, 09h  
-    lea dx,caseblanche 
+    lea dx,casedepartblanche 
     int 21h
     jmp suitee
     
@@ -561,7 +561,7 @@ comparer proc
    jne blanche_autres
    
    mov ah,09h
-   lea dx,nexistepas
+   lea dx,casedepartnexistepas
    int 21h 
    
    jmp fin20
@@ -574,7 +574,7 @@ comparer proc
    jne autres
    
    mov ah,09h
-   lea dx,caseblanche
+   lea dx,casedepartblanche
    int 21h
    
    jmp fin20
@@ -651,7 +651,8 @@ comparer endp
 verifcasedepart proc 
     
    mov bp,sp
-   mov adresse,[bp]  
+   mov dx,[bp]
+   mov adresse,dl  
    mov si,offset tableau 
    mov ax,0
    mov e,al
@@ -664,7 +665,7 @@ verifcasedepart proc
    mov al,couleur
    cmp ax,6  
     
-   jne case_blanche_noire
+   jne case_blanche_noire_20
    
    mov ax,0
    mov ah,09h  ;affichage du message.
@@ -673,11 +674,11 @@ verifcasedepart proc
    
    jmp fin_proc_verficasedepart 
    
-   case_blanche_noire:
+   case_blanche_noire_20:
    
    cmp ax,7
    
-   jne case_noire
+   jne case_noire_20
    
    mov ax,0
    mov ah,09h  ;affichage du message.
@@ -686,7 +687,7 @@ verifcasedepart proc
    
    jmp fin_proc_verficasedepart
    
-   case_noire: 
+   case_noire_20: 
    
    ;verifier tour et initialiser a,b,c,d:
    mov ax,0
@@ -948,10 +949,11 @@ verifcasedepart proc
     mov e,bl
    
     fin_proc_verficasedepart:
-    
-    mov bp,adresse 
-    mov dx,adresse
+     
+    mov dl,adresse
     push dx 
     ret
 verifcasedepart endp
+
+
 
