@@ -15,6 +15,12 @@ i db ?
 j db ?
 x db ?
 y db ?
+a db ?
+b db ?
+c db ?
+d db ?
+e db ?
+tour db ?
 
 message db 10,13,"N=$" 
 message2 db 10,13,"L=$"
