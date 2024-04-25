@@ -127,6 +127,14 @@ bool verifcasedepart(int i, int j, int tour, int damier[50])
     	
         if (damier[numerocase(i, j) ] == d){//Cette condition vérifie si la case actuelle contient un damier, c'est-à-dire si elle contient le caractère 'd'.
             if (
+
+			damier[numerocase(i - tour, j - 1) - 1] == 5//Cette condition vérifie si la case adjacente à gauche (à une position de ligne vers le haut et une position de colonne vers la gauche par rapport à la position actuelle) est vide, c'est-à-dire si elle contient le caractère '5'.
+			
+			||
+
+			damier[numerocase(i - tour, j + 1) ] == 5//Cette condition vérifie si la case adjacente à droite (à une position de ligne vers le haut et une position de colonne vers la droite par rapport à la position actuelle) est vide, c'est-à-dire si elle contient le caractère '5'.
+
+			||
             
 			(damier[numerocase(i - tour, j - 1) ] == a || damier[numerocase(i - tour, j - 1) ] == b)//1.1
 			&&//-> 1.2
@@ -137,15 +145,7 @@ bool verifcasedepart(int i, int j, int tour, int damier[50])
 			(damier[numerocase(i - tour, j + 1) ] == a || damier[numerocase(i - tour, j + 1) ] == b)// ->2.1
 			&&//-> 2.2
 			damier[numerocase(i - 2 * tour, j + 2) ] == 5//cette condition (2.1 && 2.2) vérifie si la case adjacente à droite est occupée par une pièce de type 'a' ou 'b', et si la case deux positions vers le haut et deux positions vers la droite est vide.
-			
-			|| //-> 4
-			
-			damier[numerocase(i - tour, j + 1) ] == 5//Cette condition vérifie si la case adjacente à droite (à une position de ligne vers le haut et une position de colonne vers la droite par rapport à la position actuelle) est vide, c'est-à-dire si elle contient le caractère '5'.
-			
-			||//-> 5 
-			
-			damier[numerocase(i - tour, j - 1) - 1] == 5//Cette condition vérifie si la case adjacente à gauche (à une position de ligne vers le haut et une position de colonne vers la gauche par rapport à la position actuelle) est vide, c'est-à-dire si elle contient le caractère '5'.
-			
+		
 			)
             {
                 return true;
