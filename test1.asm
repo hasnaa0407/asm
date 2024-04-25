@@ -439,8 +439,8 @@ affichage endp
 
 numero proc  
     
+    push bp
     mov bp,sp
-    mov dx,[bp]
     mov cx,0
      
     mov ax,0
@@ -519,15 +519,14 @@ numero proc
     
     fin3: 
     
-    mov bp,dx
-    push dx
+    pop bp
     ret
 numero endp  
 
 couleurcase proc
 
+    push bp
     mov bp,sp
-    mov dx,[bp]
      
     mov ax,0
     mov al,n
@@ -561,14 +560,14 @@ couleurcase proc
     fin5: 
     
     
-    mov bp,dx
+    pop bp
     ret
 couleurcase endp 
 
 comparer proc 
     
+   push bp
    mov bp,sp
-   mov bx,[bp]
    mov dx,0
    mov dl,n ;n 
    
@@ -658,8 +657,7 @@ comparer proc
     
    fin20:
    
-   mov bp,bx
-   push bx
+   pop bp
    ret
 
 comparer endp 
