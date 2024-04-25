@@ -666,9 +666,8 @@ comparer endp
 
 verifcasedepart proc 
     
-   mov bp,sp
-   mov dx,[bp]
-   mov adresse,dl  
+   push bp
+   mov bp,sp  
    mov si,offset tableau 
    
    ;appel a numero pour obtenir le numero de la case si elle existe:
@@ -964,7 +963,6 @@ verifcasedepart proc
    
     fin_proc_verficasedepart:
      
-    mov dl,adresse
-    push dx 
+    pop bp 
     ret
 verifcasedepart endp
