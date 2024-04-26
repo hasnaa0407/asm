@@ -83,8 +83,9 @@ add al,avancer
 jne abdou1 
 ;verifwithchanges dans le main  
 
+mov al,1
+cmp verifwithchanges,al
 
-cmp verifwithchanges,1
 jne modif_ea_1
 
 mov dl,i
