@@ -88,8 +88,6 @@ cmp verifwithchanges,al
 
 jne modif_ea_1
 
-mov dl,i
-mov dh,j
 mov bl,x
 mov bh,y
 mov i,bl;i=x
