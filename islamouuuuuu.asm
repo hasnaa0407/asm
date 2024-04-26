@@ -30,6 +30,9 @@ jne fin_proc_verifcasearivee
 
 ;int avancer declaration
 ;avancer =-1
+mov al,1
+sub al,2
+mov avancer,al
 
 mov al,j
 cmp al,y
