@@ -46,7 +46,7 @@ next:
    mov ax,0
    mov al,tour
    cmp al,1
-   jne switching
+   jne switching01
    
    mov bx,0
    mov bl,2
@@ -60,7 +60,7 @@ next:
    
    jmp next_code
    
-   switching: 
+   switching01: 
    
    mov bx,0
    mov bl,1
