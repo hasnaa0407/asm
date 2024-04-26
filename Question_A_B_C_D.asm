@@ -335,7 +335,7 @@ numero proc
     sub al,9
     div deux 
     push ax
-    
+    jmp fin3
     outt3: 
     mov ax,99
     push ax
